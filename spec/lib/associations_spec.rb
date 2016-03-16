@@ -24,7 +24,7 @@ class DeepNestedHasManyTopExample < Flexirest::Base
 end
 
 class DeepNestedHasManyExample < Flexirest::Base
-  has_many :deep_nested_has_many_top_examples
+  has_many :results, DeepNestedHasManyTopExample
   hash = { results: [ { entries: [ { items: [ "item one", "item two" ] } ] }, { entries: [ { items: [ "item three", "item four" ] } ] } ] }
   get :find, "/iterate", fake: hash.to_json
 end
